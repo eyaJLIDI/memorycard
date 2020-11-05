@@ -1,0 +1,102 @@
+﻿Le code de l'exercice 1
+
+fun Int.isMajor() : Boolean{
+    if(this >= 18) return true else return false
+}
+
+enum class STATUS {
+    STUDENT, PROFESSOR, OTHER
+}
+
+class Person(val firstname : String,
+             val lastname : String,
+             val age: Int?,
+             val status : STATUS,
+             var isAuthorized : Boolean = false){
+   
+   fun isMajor(): Boolean{
+       age?.let{
+           return it.isMajor()
+       }
+       return false
+   }
+   
+   
+}
+   
+fun main(){
+    val maPerson = Person("Benjamin", "Metaut", 19, STATUS.PROFESSOR)
+   
+    if(maPerson.isMajor()){
+        println("Vous êtes bien majeur")
+    } else {
+        println("Désolé vous êtes mineur")
+    }
+   
+    when(maPerson.status){
+        STATUS.PROFESSOR -> {
+            println("Vous êtes un professeur")
+            maPerson.isAuthorized = true
+        }
+        STATUS.STUDENT -> {
+            println("Vous êtes un étudiant")
+            maPerson.isAuthorized = true
+        }
+        else -> {
+            println("Euh qui est tu ?")
+        }
+    }
+ 
+    if(maPerson.isAuthorized) println("Bienvenue à Paris 8") else println("Vous ne pouvez pas rentrer désolé")
+   
+   
+}
+
+fun Int.isMajor() : Boolean{
+    if(this > 18) return true else return false
+}
+
+enum class STATUS {
+    STUDENT, PROFESSOR, OTHER
+}
+
+class Person(val firstname : String,
+             val lastname : String,
+             val age: Int?,
+             val status : STATUS,
+             var isAuthorized : Boolean){
+    
+   fun isMajor(): Boolean{
+       age?.let{
+           return it.isMajor()
+       }
+    
+       return false
+   }
+   
+   
+}
+    
+fun main(){
+    val maPerson = Person("Benjamin", "Metaut", 19, STATUS.PROFESSOR, true)
+   
+       if(maPerson.isMajor()){
+        println("Vous êtes bien majeur")
+    } else {
+        println("Désolé vous êtes mineur")
+        maPerson.isAuthorized = false
+    }
+    
+    when(maPerson.status){
+        STATUS.PROFESSOR -> println("Vous êtes un professeur")
+        STATUS.STUDENT -> println("Vous êtes un étudiant")
+        else -> {
+            println("Euh qui est tu ?")
+            maPerson.isAuthorized = false
+        }
+    }
+    
+    if(maPerson.isAuthorized) println("Bienvenue à Paris 8") else println("Vous ne pouvez pas rentrer désolé")
+    
+    
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MemoryCardGame</string>
+    <string name="level_prompt" translatable="true">مستوى</string>
+    <string-array name="level_arrays">
+        <item>سهل</item>
+        <item>متوسط</item>
+        <item>صعب</item>
+    </string-array>
+    <string name="changelangage" translatable="true">تغيير اللغة</string>
+    <string name="soundsoff" translatable="true">كتم الصوت</string>
+    <string name="name" tools:ignore="MissingTranslation">اسم اللاعب</string>
+    <string name="play" tools:ignore="MissingTranslation">ابدا اللعب</string>
+    <string name="scores" tools:ignore="MissingTranslation">درجات</string>
+</resources>

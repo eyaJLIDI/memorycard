@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MemoryCardGame</string>
+    <string name="level_prompt" translatable="true">level</string>
+    <string-array name="level_arrays">
+        <item>easy</item>
+        <item>medium</item>
+        <item>difficult</item>
+    </string-array>
+    <string name="changelangage" translatable="true">Change langage</string>
+    <string name="soundsoff" translatable="true">Soud off</string>
+    <string name="name" tools:ignore="MissingTranslation">player\'s name</string>
+    <string name="play" tools:ignore="MissingTranslation">play</string>
+    <string name="scores" tools:ignore="MissingTranslation">scores</string>
+</resources>

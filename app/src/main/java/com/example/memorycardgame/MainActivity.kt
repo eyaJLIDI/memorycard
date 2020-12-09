@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat.recreate
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -22,15 +23,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var play: Button
     private lateinit var playersname: String
     private lateinit var levelSelected: Level
+    private lateinit var sett : ImageButton
+    private lateinit var score : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+       sett = findViewById(R.id.setting)
 
         // open play activity
         openPlayAct()
         // open settings
         //openSetting()
+        //OPEN SCORE
+        openScore()
 
 
     }
@@ -39,11 +44,11 @@ class MainActivity : AppCompatActivity() {
     private fun openPlayAct() {
         option = findViewById(R.id.levels)
         val levelList: MutableList<Level> = ArrayList()
-        val level1 = Level("easy")
+        val level1 = Level("EASY")
         levelList.add(level1)
-        val level2 = Level("medium")
+        val level2 = Level("MEDIUM")
         levelList.add(level2)
-        val level3 = Level("hard")
+        val level3 = Level("HARD")
         levelList.add(level3)
         val adapter: ArrayAdapter<Level> = ArrayAdapter<Level>(
                 this, android.R.layout.simple_spinner_item, levelList
@@ -64,26 +69,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        playersname = userName.text.toString()
+
 
         play = findViewById<Button>(R.id.play)
         play.setOnClickListener {
             when (levelSelected.level) {
-                "easy" -> {
+                "EASY" -> {
+                    playersname = userName.text.toString()
                     var intentplay = Intent(this, playactivity::class.java)
                     Log.d("jjee", playersname)
                     intentplay.putExtra("PLAYER_NAME", playersname)
                     startActivity(intentplay)
                 }
 
-                "medium" -> {
+                "MEDIUM" -> {
+                    playersname = userName.text.toString()
                     var intentplay = Intent(this, playActMeduim::class.java)
-                    intentplay.putExtra("player's name", playersname)
+                    intentplay.putExtra("PLAYER_NAME", playersname)
                     startActivity(intentplay)
                 }
-                "hard" -> {
+                "HARD" -> {
+                    playersname = userName.text.toString()
                     var intentplay = Intent(this, playActHard::class.java)
-                    intentplay.putExtra("player's name", playersname)
+                    intentplay.putExtra("PLAYER_NAME", playersname)
                     startActivity(intentplay)
                 }
                 else -> Toast.makeText(this, "pick a level", Toast.LENGTH_LONG).show()
@@ -93,20 +101,27 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    fun openScore() {
+        score = findViewById(R.id.score)
+        score.setOnClickListener {
+             var intScore = Intent(this, scoresActivity::class.java)
+            intScore.putExtra("name", playersname)
+            startActivity(intScore)
+        }
+
+    }
 }
-    //________________________________________________________________
-   /* private fun openSetting() {
-        var sett = findViewById<ImageButton>(R.id.setting)
+/*
+//________________________________________________________________
+    private fun openSetting(sett : ImageButton) {
+
         sett.setOnClickListener {
             showChangeLang()
         }
     }
     //_____________________________________________________________
-   /* fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView: View = inflater.inflate(R.layout.subscpopup, container, false)
 
-        return rootView
-    }*/
     private fun showChangeLang() {
 
         val listItmes = arrayOf("English","frensh","عربي")

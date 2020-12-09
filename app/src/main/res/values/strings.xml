@@ -8,7 +8,7 @@
     </string-array>
     <string name="changelangage">Change langage</string>
     <string name="soundsoff">Soud off</string>
-    <string name="name" tools:ignore="MissingTranslation">player\'s name</string>
+    <string name="name" tools:ignore="MissingTranslation">PLAYERNAME</string>
     <string name="play" tools:ignore="MissingTranslation">play</string>
     <string name="scores" tools:ignore="MissingTranslation">scores</string>
 

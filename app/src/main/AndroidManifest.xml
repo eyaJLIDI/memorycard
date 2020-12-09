@@ -4,16 +4,18 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryCardGame">
-        <activity android:name=".playActHard"></activity>
+        <activity android:name=".scoresActivity"></activity>
+        <activity android:name=".playActHard" />
         <activity android:name=".playActMeduim" />
         <activity android:name=".playactivity" />
-        <activity android:name=".IscriptionAct" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="MEMORY CARD GAME">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

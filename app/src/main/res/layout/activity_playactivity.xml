@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     tools:context=".playactivity">
 
     <TextView
+        android:id="@+id/scoreEasy"
+        android:layout_width="182dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="79dp"
+        android:layout_toRightOf="@id/player"
+        android:text=""
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <TextView
         android:id="@+id/player"
-        android:layout_width="248dp"
-        android:layout_height="71dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="@color/blue"
-        android:textColor="@color/white"/>
+        android:layout_width="182dp"
+        android:layout_height="55dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <TableLayout
         android:layout_width="298dp"
         android:layout_height="499dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:orientation="horizontal">
 
         <TableRow
@@ -29,18 +35,20 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/a"
+                android:id="@+id/im1"
                 android:layout_width="138dp"
                 android:layout_height="133dp"
                 android:contentDescription="a"
-                android:src="@drawable/a" />
+                android:src="@drawable/a"
+                />
 
             <ImageView
-                android:id="@+id/a2"
+                android:id="@+id/im2"
                 android:layout_width="138dp"
                 android:layout_height="133dp"
                 android:contentDescription="a"
-                android:src="@drawable/a" />
+                android:src="@drawable/a"
+                />
 
         </TableRow>
 
@@ -49,16 +57,20 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/im3"
                 android:layout_width="138dp"
                 android:layout_height="133dp"
                 android:contentDescription="a"
-                android:src="@drawable/a" />
+                android:src="@drawable/a"
+                />
 
             <ImageView
+                android:id="@+id/im4"
                 android:layout_width="138dp"
                 android:layout_height="133dp"
                 android:contentDescription="a"
-                android:src="@drawable/a" />
+                android:src="@drawable/a"
+                />
 
         </TableRow>
 
@@ -67,19 +79,24 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/im5"
                 android:layout_width="138dp"
                 android:layout_height="133dp"
                 android:contentDescription="a"
-                android:src="@drawable/a" />
+                android:src="@drawable/a"
+                />
 
             <ImageView
+                android:id="@+id/im6"
                 android:layout_width="138dp"
                 android:layout_height="133dp"
                 android:contentDescription="a"
-                android:src="@drawable/a" />
+                android:src="@drawable/a"
+                />
 
         </TableRow>
 
 
     </TableLayout>
-</LinearLayout>
+
+</RelativeLayout>

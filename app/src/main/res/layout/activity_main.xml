@@ -7,22 +7,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:rotationX="0"
-    android:background="@drawable/back2"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/memory"
+        android:layout_width="367dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="92dp"
+        android:gravity="center"
+        android:layoutDirection="inherit"
+        android:text="MEMORY CARD GAME"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/userName"
-        android:layout_width="169dp"
-        android:layout_height="52dp"
-        android:background="@color/white"
-        android:textColor="@color/blue"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="84dp"
+        android:background="@color/black"
+        android:gravity="center_horizontal"
         android:hint="@string/name"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintTop_toBottomOf="@+id/memory" />
 
     <Spinner
         android:id="@+id/levels"
@@ -32,7 +48,6 @@
         android:entries="@array/level_arrays"
         android:prompt="@string/level_prompt"
         android:textAlignment="center"
-        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +66,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/levels"
-        app:layout_constraintVertical_bias="0.0"
-        />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/help"

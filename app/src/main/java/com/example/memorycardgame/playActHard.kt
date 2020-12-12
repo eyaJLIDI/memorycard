@@ -264,7 +264,7 @@ class playActHard : AppCompatActivity() {
             }
             else {
                 CoroutineScope(Dispatchers.IO).launch {
-                    turnCardsM()
+                    turnCardsH()
 
                 }
                 tabImg.clear()
@@ -276,7 +276,7 @@ class playActHard : AppCompatActivity() {
         }
 
     }
-    private suspend fun turnCardsM() {
+    private suspend fun turnCardsH() {
         delay(3000)
         var im1 = tabImg[0]
         var im2 = tabImg[1]

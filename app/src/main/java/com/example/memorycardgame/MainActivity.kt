@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         // open settings
         //openSetting()
         //OPEN SCORE
-        openScore()
+       // openScore()
 
 
     }
@@ -102,15 +102,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun openScore() {
-        score = findViewById(R.id.score)
+  /*  fun openScore() {
+        score = score
         score.setOnClickListener {
              var intScore = Intent(this, scoresActivity::class.java)
             intScore.putExtra("name", playersname)
             startActivity(intScore)
+            Log.d("tst1", "marche")
         }
 
-    }
+    }*/
 }
 /*
 //________________________________________________________________

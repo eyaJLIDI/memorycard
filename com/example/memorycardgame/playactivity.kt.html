@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>playactivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+playactivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.memorycardgame</span>
+
+<span class="s1">import android.graphics.drawable.BitmapDrawable</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.util.Log</span>
+<span class="s1">import android.widget.ImageView</span>
+<span class="s1">import android.widget.TextView</span>
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+
+
+<span class="s0">class </span><span class="s1">playactivity : AppCompatActivity() {</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_playactivity)</span>
+        <span class="s0">var </span><span class="s1">name = findViewById&lt;TextView&gt;(R.id.player)</span>
+        <span class="s0">val </span><span class="s1">intent = intent</span>
+        <span class="s0">var </span><span class="s1">nameplayer = intent.getStringExtra(</span><span class="s2">&quot;PLAYER_NAME&quot;</span><span class="s1">)</span>
+        <span class="s1">name.text = nameplayer</span>
+
+
+
+
+        <span class="s0">var </span><span class="s1">a = findViewById&lt;ImageView&gt;(R.id.a)</span>
+        <span class="s0">var </span><span class="s1">a2 = findViewById&lt;ImageView&gt;(R.id.a2)</span>
+        <span class="s1">a.setOnClickListener {</span>
+            <span class="s1">a.setImageResource(R.drawable.b)</span>
+            <span class="s1">}</span>
+
+        <span class="s1">a2.setOnClickListener {</span>
+                <span class="s1">a2.setImageResource(R.drawable.aa)</span>
+            <span class="s1">}</span>
+        <span class="s1">a.setOnClickListener {</span>
+            <span class="s1">a.setImageResource(R.drawable.ic_launcher_background)</span>
+        <span class="s1">}</span>
+
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+</pre>
+</body>
+</html>

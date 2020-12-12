@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.memorycardgame</span>
+
+
+<span class="s1">import android.app.Activity</span>
+<span class="s1">import android.app.AlertDialog</span>
+<span class="s1">import android.content.Context</span>
+<span class="s1">import android.content.Intent</span>
+<span class="s1">import android.content.res.Configuration</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.util.Log</span>
+<span class="s1">import android.view.View</span>
+<span class="s1">import android.widget.*</span>
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import kotlinx.android.synthetic.main.activity_main.*</span>
+<span class="s1">import java.util.*</span>
+<span class="s1">import kotlin.collections.ArrayList</span>
+<span class="s1">import android.widget.AdapterView </span><span class="s0">as </span><span class="s1">AdapterView1</span>
+
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity() {</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">option: Spinner</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">play: Button</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">playersname: String</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">levelSelected: Level</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span>
+
+
+        <span class="s2">// open play activity</span>
+        <span class="s1">openPlayAct()</span>
+        <span class="s2">// open settings</span>
+        <span class="s2">//openSetting()</span>
+
+
+    <span class="s1">}</span>
+
+    <span class="s2">//__________________________________________________________</span>
+    <span class="s1">private </span><span class="s0">fun </span><span class="s1">openPlayAct() {</span>
+        <span class="s1">option = findViewById(R.id.levels)</span>
+        <span class="s0">val </span><span class="s1">levelList: MutableList&lt;Level&gt; = ArrayList()</span>
+        <span class="s0">val </span><span class="s1">level1 = Level(</span><span class="s3">&quot;easy&quot;</span><span class="s1">)</span>
+        <span class="s1">levelList.add(level1)</span>
+        <span class="s0">val </span><span class="s1">level2 = Level(</span><span class="s3">&quot;medium&quot;</span><span class="s1">)</span>
+        <span class="s1">levelList.add(level2)</span>
+        <span class="s0">val </span><span class="s1">level3 = Level(</span><span class="s3">&quot;hard&quot;</span><span class="s1">)</span>
+        <span class="s1">levelList.add(level3)</span>
+        <span class="s0">val </span><span class="s1">adapter: ArrayAdapter&lt;Level&gt; = ArrayAdapter&lt;Level&gt;(</span>
+                <span class="s0">this, </span><span class="s1">android.R.layout.simple_spinner_item</span><span class="s0">, </span><span class="s1">levelList</span>
+        <span class="s1">)</span>
+        <span class="s1">adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)</span>
+        <span class="s1">option.setAdapter(adapter)</span>
+        <span class="s1">option.onItemSelectedListener = </span><span class="s0">object </span><span class="s1">: android.widget.AdapterView.OnItemSelectedListener {</span>
+            <span class="s1">override </span><span class="s0">fun </span><span class="s1">onNothingSelected(parent: android.widget.AdapterView&lt;*&gt;?) {</span>
+            <span class="s1">}</span>
+
+            <span class="s1">override </span><span class="s0">fun </span><span class="s1">onItemSelected(adapterView: AdapterView1&lt;*&gt;?</span><span class="s0">, </span><span class="s1">view: View?</span><span class="s0">, </span><span class="s1">position: Int</span><span class="s0">, </span><span class="s1">id: Long) {</span>
+
+                <span class="s0">val </span><span class="s1">level: Level = option.selectedItem </span><span class="s0">as </span><span class="s1">Level</span>
+                <span class="s1">levelSelected = level</span>
+                <span class="s1">Toast.makeText(</span><span class="s0">this</span><span class="s1">@MainActivity</span><span class="s0">, </span><span class="s3">&quot;you selected the level </span><span class="s0">${</span><span class="s1">adapterView?.getItemAtPosition(position).toString()</span><span class="s0">}</span><span class="s3">&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span>
+
+
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s1">playersname = userName.text.toString()</span>
+
+        <span class="s1">play = findViewById&lt;Button&gt;(R.id.play)</span>
+        <span class="s1">play.setOnClickListener {</span>
+            <span class="s0">when </span><span class="s1">(levelSelected.level) {</span>
+                <span class="s3">&quot;easy&quot; </span><span class="s1">-&gt; {</span>
+                    <span class="s0">var </span><span class="s1">intentplay = Intent(</span><span class="s0">this, </span><span class="s1">playactivity::</span><span class="s0">class</span><span class="s1">.java)</span>
+                    <span class="s1">Log.d(</span><span class="s3">&quot;jjee&quot;</span><span class="s0">, </span><span class="s1">playersname)</span>
+                    <span class="s1">intentplay.putExtra(</span><span class="s3">&quot;PLAYER_NAME&quot;</span><span class="s0">, </span><span class="s1">playersname)</span>
+                    <span class="s1">startActivity(intentplay)</span>
+                <span class="s1">}</span>
+
+                <span class="s3">&quot;medium&quot; </span><span class="s1">-&gt; {</span>
+                    <span class="s0">var </span><span class="s1">intentplay = Intent(</span><span class="s0">this, </span><span class="s1">playActMeduim::</span><span class="s0">class</span><span class="s1">.java)</span>
+                    <span class="s1">intentplay.putExtra(</span><span class="s3">&quot;player's name&quot;</span><span class="s0">, </span><span class="s1">playersname)</span>
+                    <span class="s1">startActivity(intentplay)</span>
+                <span class="s1">}</span>
+                <span class="s3">&quot;hard&quot; </span><span class="s1">-&gt; {</span>
+                    <span class="s0">var </span><span class="s1">intentplay = Intent(</span><span class="s0">this, </span><span class="s1">playActHard::</span><span class="s0">class</span><span class="s1">.java)</span>
+                    <span class="s1">intentplay.putExtra(</span><span class="s3">&quot;player's name&quot;</span><span class="s0">, </span><span class="s1">playersname)</span>
+                    <span class="s1">startActivity(intentplay)</span>
+                <span class="s1">}</span>
+                <span class="s0">else </span><span class="s1">-&gt; Toast.makeText(</span><span class="s0">this, </span><span class="s3">&quot;pick a level&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span>
+            <span class="s1">}</span>
+
+
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+    <span class="s2">//________________________________________________________________</span>
+   <span class="s2">/* private fun openSetting() { 
+        var sett = findViewById&lt;ImageButton&gt;(R.id.setting) 
+        sett.setOnClickListener { 
+            showChangeLang() 
+        } 
+    } 
+    //_____________________________________________________________ 
+   /* fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? { 
+        var rootView: View = inflater.inflate(R.layout.subscpopup, container, false) 
+ 
+        return rootView 
+    }*/ 
+    private fun showChangeLang() { 
+ 
+        val listItmes = arrayOf(&quot;English&quot;,&quot;frensh&quot;,&quot;عربي&quot;) 
+ 
+        val mBuilder = AlertDialog.Builder(this@MainActivity) 
+        mBuilder.setTitle(&quot;Choose Language&quot;) 
+        mBuilder.setSingleChoiceItems(listItmes, -1) { dialog, which -&gt; 
+            if (which == 0) { 
+                setLocate(&quot;en&quot;) 
+                recreate() 
+            } else if (which == 1) { 
+                setLocate(&quot;fr&quot;) 
+                recreate() 
+            } else if (which == 2) { 
+                setLocate(&quot;ar&quot;) 
+                recreate() 
+            } 
+ 
+            dialog.dismiss() 
+        } 
+        val mDialog = mBuilder.create() 
+ 
+        mDialog.show() 
+ 
+    } 
+ 
+    private fun setLocate(Lang: String) { 
+ 
+        val locale = Locale(Lang) 
+ 
+        Locale.setDefault(locale) 
+ 
+        val config = Configuration() 
+ 
+        config.locale = locale 
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics) 
+ 
+        val editor = getSharedPreferences(&quot;Settings&quot;, Context.MODE_PRIVATE).edit() 
+        editor.putString(&quot;My_Lang&quot;, Lang) 
+        editor.apply() 
+    } 
+ 
+    private fun loadLocate() { 
+        val sharedPreferences = getSharedPreferences(&quot;Settings&quot;, Activity.MODE_PRIVATE) 
+        val language = sharedPreferences.getString(&quot;My_Lang&quot;, &quot;&quot;) 
+        language?.let { setLocate(it) } 
+    }*/</span>
+    <span class="s2">//________________________________________________________________________________________</span>
+
+
+</pre>
+</body>
+</html>

@@ -12,6 +12,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.recreate
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -20,22 +22,20 @@ import android.widget.AdapterView as AdapterView1
 
 class MainActivity : AppCompatActivity() {
     private lateinit var option: Spinner
-    private lateinit var play: Button
+    private lateinit var playAct: Button
     private lateinit var playersname: String
     private lateinit var levelSelected: Level
-    private lateinit var sett : ImageButton
-    private lateinit var score : Button
+   // private lateinit var sett : ImageButton
+    private lateinit var scoreOpen : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       sett = findViewById(R.id.setting)
-
-        // open play activity
+        
         openPlayAct()
         // open settings
         //openSetting()
         //OPEN SCORE
-       // openScore()
+        openScore()
 
 
     }
@@ -71,8 +71,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        play = findViewById<Button>(R.id.play)
-        play.setOnClickListener {
+        playAct = play
+        playAct.setOnClickListener {
             when (levelSelected.level) {
                 "EASY" -> {
                     playersname = userName.text.toString()
@@ -102,16 +102,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-  /*  fun openScore() {
-        score = score
-        score.setOnClickListener {
+   fun openScore() {
+        scoreOpen = score
+        scoreOpen.setOnClickListener {
              var intScore = Intent(this, scoresActivity::class.java)
-            intScore.putExtra("name", playersname)
             startActivity(intScore)
-            Log.d("tst1", "marche")
+
         }
 
-    }*/
+    }
 }
 /*
 //________________________________________________________________

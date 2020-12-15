@@ -39,11 +39,12 @@
         android:id="@+id/table3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/LH"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="60dp"
         android:gravity="center"
         android:orientation="horizontal"
+        android:padding="5dp"
         android:weightSum="24">
 
         <TableRow
@@ -52,32 +53,32 @@
 
             <ImageView
                 android:id="@+id/im1H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im2H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im3H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im4H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -91,32 +92,32 @@
 
             <ImageView
                 android:id="@+id/im5H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im6H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im7H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im8H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -129,32 +130,32 @@
 
             <ImageView
                 android:id="@+id/im9h"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im10h"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im11h"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im12H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -168,32 +169,32 @@
 
             <ImageView
                 android:id="@+id/im13H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im14H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im15H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im16H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -206,32 +207,32 @@
 
             <ImageView
                 android:id="@+id/im17H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im18H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im19H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im20H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -245,32 +246,32 @@
 
             <ImageView
                 android:id="@+id/im21H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im22H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im23H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im24H"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -287,9 +288,9 @@
         android:layout_below="@+id/table3"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="345dp"
-        android:layout_marginRight="345dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="342dp"
+        android:layout_marginRight="342dp"
         android:backgroundTint="@color/pink"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 

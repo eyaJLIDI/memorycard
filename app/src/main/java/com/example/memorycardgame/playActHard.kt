@@ -1,57 +1,65 @@
 package com.example.memorycardgame
 
+import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import kotlinx.android.synthetic.main.activity_play_act_hard.*
 import kotlinx.android.synthetic.main.activity_play_act_hard.*
 import kotlinx.android.synthetic.main.activity_play_act_meduim.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.android.synthetic.main.activity_playactivity.*
+import kotlinx.coroutines.*
 
 class playActHard : AppCompatActivity() {
+    private lateinit var returnH: ImageView
     private var tab: MutableList<String> = mutableListOf()
     private var tabImg: MutableList<ImageView> = mutableListOf()
     private var tabImg2: MutableList<Int> = mutableListOf()
     private var tabb: MutableList<Int> = mutableListOf()
     var tablist : MutableList<Int> = mutableListOf(0,1,2,3,4,5,6,7,8,9,10,11,0,1,2,3,4,5,6,7,8,9,10,11)
-    private lateinit var scoreHARD: TextView
+    private lateinit var scoreHard: TextView
     private var scoreH = 0
     var c = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_play_act_meduim)
+        setContentView(R.layout.activity_play_act_hard)
         var nameH = playerH
-        val intent = intent
-        var nameplayer = intent.getStringExtra("PLAYER_NAME")
-        nameH.text = nameplayer
+        val intentH = intent
+        val nameplayerH = intentH.getStringExtra("PLAYER_NAME")
+        nameH.text = nameplayerH
 
-        var im1 = im1H
-        var im2 = im2H
-        var im3 = im3H
-        var im4 = im4H
-        var im5 = im5H
-        var im6 = im6H
-        var im7 = im7H
-        var im8 = im8H
-        var im9 = im9h
-        var im10 = im10h
-        var im11 = im11h
-        var im12 = im12H
-        var im13 = im13H
-        var im14 = im14H
-        var im15 = im15H
-        var im16 = im16H
-        var im17 = im17H
-        var im18 = im18H
-        var im19 = im19H
-        var im20 = im20H
-        var im21 = im21H
-        var im22 = im22H
-        var im23 = im23H
-        var im24 = im24H
+        val intentHard = Intent(this, scoresActivity::class.java)
+        intentHard.putExtra("scoreHard", scoreH)
+
+        startActivity(intentHard)
+
+        val im1 = im1H
+        val im2 = im2H
+        val im3 = im3H
+        val im4 = im4H
+        val im5 = im5H
+        val im6 = im6H
+        val im7 = im7H
+        val im8 = im8H
+        val im9 = im9h
+        val im10 = im10h
+        val im11 = im11h
+        val im12 = im12H
+        val im13 = im13H
+        val im14 = im14H
+        val im15 = im15H
+        val im16 = im16H
+        val im17 = im17H
+        val im18 = im18H
+        val im19 = im19H
+        val im20 = im20H
+        val im21 = im21H
+        val im22 = im22H
+        val im23 = im23H
+        val im24 = im24H
 
         tabImg2.add(R.drawable.a)
         tabImg2.add(R.drawable.b)
@@ -68,13 +76,11 @@ class playActHard : AppCompatActivity() {
 
 
 
-        while ( c < 24) {
+        while (c < 24) {
 
-            var r = (tablist).random()
-
+            val r = (tablist).random()
             tabb.add(r)
             tablist.remove(r)
-
             c += 1
         }
 
@@ -84,7 +90,7 @@ class playActHard : AppCompatActivity() {
             tabImg.add(im1)
             tab.add(r.toString())
             im1.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
 
         }
         im2.setOnClickListener {
@@ -92,7 +98,7 @@ class playActHard : AppCompatActivity() {
             tabImg.add(im2)
             tab.add(r.toString())
             im2.setImageResource(r)
-            verifCarte()
+            //verifCarteH()
         }
 
         im3.setOnClickListener {
@@ -100,7 +106,7 @@ class playActHard : AppCompatActivity() {
             tabImg.add(im3)
             tab.add(r.toString())
             im3.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
         }
 
         im4.setOnClickListener {
@@ -108,166 +114,174 @@ class playActHard : AppCompatActivity() {
             tabImg.add(im4)
             tab.add(r.toString())
             im4.setImageResource(r)
-            verifCarte()
+           // verifCarteH()
         }
         im5.setOnClickListener {
             val r = tabImg2[tabb[4]]
             tabImg.add(im5)
             tab.add(r.toString())
             im5.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
         }
         im6.setOnClickListener {
             val r = tabImg2[tabb[6]]
             tabImg.add(im6)
             tab.add(r.toString())
             im6.setImageResource(r)
-            verifCarte()
+           // verifCarteH()
         }
         im7.setOnClickListener {
             val r = tabImg2[tabb[7]]
             tabImg.add(im7)
             tab.add(r.toString())
             im7.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
         }
         im8.setOnClickListener {
             val r = tabImg2[tabb[8]]
             tabImg.add(im8)
             tab.add(r.toString())
             im8.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
         }
         im9.setOnClickListener {
             val r = tabImg2[tabb[9]]
             tabImg.add(im9)
             tab.add(r.toString())
             im9.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
         }
         im10.setOnClickListener {
             val r = tabImg2[tabb[10]]
             tabImg.add(im10)
             tab.add(r.toString())
-            im6.setImageResource(r)
-            verifCarte()
+            im10.setImageResource(r)
+        //    verifCarteH()
         }
         im11.setOnClickListener {
             val r = tabImg2[tabb[11]]
             tabImg.add(im11)
             tab.add(r.toString())
             im11.setImageResource(r)
-            verifCarte()
+           // verifCarteH()
         }
         im12.setOnClickListener {
             val r = tabImg2[tabb[12]]
             tabImg.add(im12)
             tab.add(r.toString())
             im12.setImageResource(r)
-            verifCarte()
+          //  verifCarteH()
         }
         im13.setOnClickListener {
             val r = tabImg2[tabb[13]]
             tabImg.add(im13)
             tab.add(r.toString())
-            im1.setImageResource(r)
-            verifCarte()
+            im13.setImageResource(r)
+           // verifCarteH()
 
         }
         im14.setOnClickListener {
             val r = tabImg2[tabb[14]]
             tabImg.add(im14)
             tab.add(r.toString())
-            im2.setImageResource(r)
-            verifCarte()
+            im14.setImageResource(r)
+          //  verifCarteH()
         }
 
         im15.setOnClickListener {
             val r = tabImg2[tabb[15]]
             tabImg.add(im15)
             tab.add(r.toString())
-            im3.setImageResource(r)
-            verifCarte()
+            im15.setImageResource(r)
+           // verifCarteH()
         }
 
         im16.setOnClickListener {
             val r = tabImg2[tabb[16]]
             tabImg.add(im16)
             tab.add(r.toString())
-            im4.setImageResource(r)
-            verifCarte()
+            im16.setImageResource(r)
+          //  verifCarteH()
         }
         im17.setOnClickListener {
             val r = tabImg2[tabb[17]]
             tabImg.add(im17)
             tab.add(r.toString())
-            im5.setImageResource(r)
-            verifCarte()
+            im17.setImageResource(r)
+           // verifCarteH()
         }
         im18.setOnClickListener {
             val r = tabImg2[tabb[18]]
             tabImg.add(im18)
             tab.add(r.toString())
-            im6.setImageResource(r)
-            verifCarte()
+            im18.setImageResource(r)
+           // verifCarteH()
         }
         im19.setOnClickListener {
             val r = tabImg2[tabb[19]]
             tabImg.add(im19)
             tab.add(r.toString())
-            im7.setImageResource(r)
-            verifCarte()
+            im19.setImageResource(r)
+          //  verifCarteH()
         }
         im20.setOnClickListener {
             val r = tabImg2[tabb[20]]
             tabImg.add(im20)
             tab.add(r.toString())
-            im8.setImageResource(r)
-            verifCarte()
+            im20.setImageResource(r)
+          //  verifCarteH()
         }
         im21.setOnClickListener {
             val r = tabImg2[tabb[21]]
             tabImg.add(im21)
             tab.add(r.toString())
-            im9.setImageResource(r)
-            verifCarte()
+            im21.setImageResource(r)
+           // verifCarteH()
         }
         im22.setOnClickListener {
             val r = tabImg2[tabb[22]]
             tabImg.add(im22)
             tab.add(r.toString())
-            im6.setImageResource(r)
-            verifCarte()
+            im22.setImageResource(r)
+           // verifCarteH()
         }
         im23.setOnClickListener {
             val r = tabImg2[tabb[23]]
             tabImg.add(im23)
             tab.add(r.toString())
-            im11.setImageResource(r)
-            verifCarte()
+            im23.setImageResource(r)
+           // verifCarteH()
         }
         im24.setOnClickListener {
             val r = tabImg2[tabb[24]]
             tabImg.add(im24)
             tab.add(r.toString())
-            im12.setImageResource(r)
-            verifCarte()
+            im24.setImageResource(r)
+            //verifCarteH()
         }
 
+        returnHomeH()
+
+
     }
-    private fun verifCarte() {
+   /* private fun verifCarteH() {
         if (tab.size == 2) {
             if (tab[0] == tab[1]) {
                 scoreH += 1
-                scoreHARD = scoreMedium
-                scoreHARD.text = "Score += $scoreH !!"
+                scoreHard = scoreHARD
+                scoreHard.text = "Score += $scoreH !!"
             }
             else {
-                CoroutineScope(Dispatchers.IO).launch {
-                    turnCardsH()
+                GlobalScope.launch {
+                    delay(3000)
+                    var im1 = tabImg[0]
+                    var im2 = tabImg[1]
+                    im1.setImageResource(R.drawable.what)
+                    im2.setImageResource(R.drawable.what)
 
+                    tabImg.clear()
                 }
-                tabImg.clear()
+
             }
             tab.clear()
 
@@ -275,12 +289,14 @@ class playActHard : AppCompatActivity() {
 
         }
 
+    }*/
+
+    private fun returnHomeH() {
+        returnH = returnHome3
+        returnH.setOnClickListener {
+            val intentReturnH = Intent(this, MainActivity::class.java)
+            startActivity(intentReturnH)
+        }
     }
-    private suspend fun turnCardsH() {
-        delay(3000)
-        var im1 = tabImg[0]
-        var im2 = tabImg[1]
-        im1.setImageResource(R.drawable.what)
-        im2.setImageResource(R.drawable.what)
-    }
+
 }

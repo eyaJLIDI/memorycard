@@ -37,9 +37,9 @@
 
     <TableLayout
         android:id="@+id/table2"
-        android:layout_width="360dp"
-        android:layout_height="554dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -51,24 +51,24 @@
 
             <ImageView
                 android:id="@+id/im1M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im2M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im3M"
-                android:layout_width="128dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -83,23 +83,23 @@
 
             <ImageView
                 android:id="@+id/im4M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
             <ImageView
                 android:id="@+id/im5M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im6M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -112,24 +112,24 @@
 
             <ImageView
                 android:id="@+id/im7M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im8M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im9M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
@@ -143,24 +143,24 @@
 
             <ImageView
                 android:id="@+id/im10M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im11M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
 
             <ImageView
                 android:id="@+id/im12M"
-                android:layout_width="138dp"
-                android:layout_height="133dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:contentDescription="a"
                 android:src="@drawable/what" />
